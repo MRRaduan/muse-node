@@ -215,7 +215,15 @@ const payload = {
   ],
 };
 
-app.use(cors());
+const corsOptions = {
+  origin: false,
+  methods: ["GET", "OPTIONS"],
+  maxAge: 259000,
+  allowedHeaders: ["Content-Type", "text/plain"],
+  allowCredentials: true,
+};
+
+app.use(cors(corsOptions));
 
 // Create GET request
 app.get("/songs", (req, res) => {
