@@ -216,7 +216,10 @@ const payload = {
 };
 
 const corsOptions = {
-  origin: "https://frontend-platform-test-mat.vercel.app/",
+  origin: "*",
+  methods: ["GET"],
+  maxAge: 259000,
+  allowedHeaders: ["Content-Type", "text/plain"],
 };
 
 app.use(cors(corsOptions));
