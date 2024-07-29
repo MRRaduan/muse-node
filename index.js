@@ -215,7 +215,11 @@ const payload = {
   ],
 };
 
-app.use(cors(corsOptions));
+app.use(
+  cors({
+    origin: "https://frontend-platform-test-mat.vercel.app/",
+  }),
+);
 
 // Create GET request
 app.get("/songs", (req, res) => {
