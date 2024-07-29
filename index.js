@@ -5,6 +5,7 @@ const express = require("express");
 
 // Initialize Express
 const app = express();
+const cors = require("cors");
 
 const payload = {
   songs: [
@@ -213,6 +214,12 @@ const payload = {
     },
   ],
 };
+
+const corsOptions = {
+  origin: "https://frontend-platform-test-mat.vercel.app/",
+};
+
+app.use(cors(corsOptions));
 
 // Create GET request
 app.get("/songs", (req, res) => {
