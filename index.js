@@ -1,3 +1,5 @@
+const fs = require("fs");
+
 // Add Express
 const express = require("express");
 
